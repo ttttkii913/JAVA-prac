@@ -8,11 +8,12 @@ class Solution {
         for (int i = 0; i < num_list.length; i++)
             answer[i] = num_list[i];
        
-        if (last > last2) {
-            answer[num_list.length] = last - last2;
-        } else {
-            answer[num_list.length] = last * 2;
-        }
+        answer[answer.length - 1] = last > last2 ? last - last2 : last * 2;
+        // if (last > last2) {
+        //     answer[num_list.length] = last - last2;
+        // } else {
+        //     answer[num_list.length] = last * 2;
+        // }
         
         return answer;
     }
