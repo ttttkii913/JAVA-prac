@@ -1,21 +1,28 @@
-import java.util.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class Main {
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine());
-		int A = Integer.parseInt(st.nextToken());
-		int B = Integer.parseInt(st.nextToken());
-		int C = Integer.parseInt(br.readLine());
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-		if (B + C > 59) {
-			A += (B + C) / 60;
-			B = (B + C) % 60;
-			if (A > 23)
-				A %= 24;
-		} else
-			B += C;
-		System.out.println(A + " " + B);
-	}
+        int h = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
+        int c = Integer.parseInt(br.readLine());
+
+        if (m + c > 59) {
+            h += (m + c) / 60;
+            m = (m + c) % 60;
+            if (h > 23) {
+                h %= 24;
+            }
+        } else {
+            m += c;
+        }
+
+        System.out.println(h + " " + m);
+
+    }
 }
