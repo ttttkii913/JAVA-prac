@@ -1,20 +1,25 @@
-import java.util.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class Main {
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine());
-		int H = Integer.parseInt(st.nextToken());
-		int M = Integer.parseInt(st.nextToken());
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 
-		if (M - 45 < 0) {
-			M = 60 + (M - 45);
-			H = H - 1;
-			if (H < 0)
-				H = 23;
-		} else
-			M = M - 45;
-		System.out.println(H + " " + M);
-	}
+        int h = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
+
+        if (m < 45) {
+            m += 15;
+            h -= 1;
+            if (h < 0)
+                h = 23;
+        } else {
+            m -= 45;
+        }
+
+        System.out.println(h + " " + m);
+    }
 }
