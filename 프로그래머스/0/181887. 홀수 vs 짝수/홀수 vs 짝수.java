@@ -9,10 +9,8 @@ class Solution {
             } else {
                 odd += num_list[i]; 
             }
-        }
-        
-        int answer = (odd > even ? odd : even); 
+        } 
                        
-        return answer;
+        return Math.max(odd, even);
     }
 }
