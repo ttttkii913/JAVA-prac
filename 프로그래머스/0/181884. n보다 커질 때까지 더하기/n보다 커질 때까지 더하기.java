@@ -5,7 +5,7 @@ class Solution {
         for (int i = 0; i < numbers.length; i++) {
             sum += numbers[i];
             if (sum > n) {
-                return sum;
+                break;
             }
         }
         return sum;
